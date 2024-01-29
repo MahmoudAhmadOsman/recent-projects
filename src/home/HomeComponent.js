@@ -97,7 +97,7 @@ const HomeComponent = () => {
 			name: "Angular ecommerce",
 			title: "Angular ecommerce",
 			description:
-				"Angular ecommerce application that is built with Angular and deployed on Vercel.",
+				"Ecommerce platform powered by Angular, constructed and deployed on Vercel.",
 			image: "https://angular.io/assets/images/logos/angular/angular.svg",
 			url: "https://custom-ecommerce-angular.vercel.app/",
 		},
@@ -106,7 +106,7 @@ const HomeComponent = () => {
 			name: "Angular potcast",
 			title: "Potcast App",
 			description:
-				"Angular postcast application that is built with Angular and deployed on Vercel.",
+				"Angular podcast app developed using Angular and hosted on Vercel.",
 			image: "https://angular.io/assets/images/logos/angular/angular.svg",
 			url: "https://podcast-blue-two.vercel.app/",
 		},
