@@ -173,7 +173,7 @@ const HomeComponent = () => {
 							<div className="col-md-12 text-secondary text-center">
 								<div className="bg-dark px-4">
 									<span>
-										&copy; Copyright {new Date().getFullYear()}. Develped by
+										&copy; Copyright {new Date().getFullYear()}. Developed by
 										Mahmoud Osman.
 									</span>
 								</div>
