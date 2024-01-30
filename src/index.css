@@ -14,3 +14,16 @@ code {
 img {
 	pointer-events: none;
 }
+
+/* Home page style */
+.home {
+	position: relative;
+}
+.home .card {
+	min-height: 100%;
+	max-height: 100%;
+	box-shadow: 6px 5px 0px #f4f2f240;
+	-webkit-box-shadow: 6px 5px 0px #f4f2f240;
+	-moz-box-shadow: 6px 5px 0px #f4f2f240;
+	-o-box-shadow: 6px 5px 0px #f4f2f240;
+}
