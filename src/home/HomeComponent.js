@@ -1,6 +1,9 @@
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import Loading from "../utils/Loading";
 
 const HomeComponent = () => {
+	const [loading, setLoading] = useState(true);
 	const projects = [
 		{
 			id: 1,
@@ -112,51 +115,72 @@ const HomeComponent = () => {
 		},
 	];
 
+	useEffect(() => {
+		const timer = setTimeout(() => {
+			setLoading(false);
+		}, 2000);
+
+		// Clear timeout to avoid memory leaks
+		return () => clearTimeout(timer);
+	}, []);
 	return (
 		<section className="home bg-info text-light vh-1000">
 			<div className="container p-4">
-				<h1 className="text-uppercase">Recent Projects</h1>
-				<hr />
+				{loading ? (
+					<div>
+						<Loading />
+					</div>
+				) : (
+					<div>
+						<h1 className="text-uppercase">Recent Projects</h1>
+						<hr />
 
-				<div className="row">
-					{projects.map((project) => (
-						<div className="col-md-3 mb-3" key={project.id}>
-							<div className="card">
-								<span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-									{project.id}
-								</span>
-								<img
-									src={project.image}
-									className="card-img-top img-fluid img-thumbnail"
-									alt={project.name}
-									style={{ height: "150px" }}
-								/>
-								<div className="card-body">
-									<h5 className="card-title text-uppercase">{project.title}</h5>
-									<p className="card-text">{project.description}</p>
-									<Link
-										to={project.url}
-										target="_blank"
-										className="btn btn-outline-warning btn-sm"
-									>
-										Visit
-									</Link>
+						<div className="row">
+							{projects.map((project) => (
+								<div
+									className="col-lg-3 col-md-4 col-sm-6 col-xs-12 mb-3"
+									key={project.id}
+								>
+									<div className="card">
+										<span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+											{project.id}
+										</span>
+										<img
+											src={project.image}
+											className="card-img-top img-fluid img-thumbnail bg-dark"
+											alt={project.name}
+											style={{ height: "150px" }}
+										/>
+										<div className="card-body">
+											<h5 className="card-title text-uppercase">
+												{project.title}
+											</h5>
+											<p className="card-text">{project.description}</p>
+											<Link
+												to={project.url}
+												target="_blank"
+												className="btn btn-outline-warning btn-sm"
+											>
+												Visit
+											</Link>
+										</div>
+									</div>
+								</div>
+							))}
+						</div>
+						{/* row 2 */}
+						<div className="row">
+							<div className="col-md-12 text-secondary text-center">
+								<div className="bg-dark px-4">
+									<span>
+										&copy; Copyright {new Date().getFullYear()}. Develped by
+										Mahmoud Osman.
+									</span>
 								</div>
 							</div>
 						</div>
-					))}
-				</div>
-				{/* row 2 */}
-				<div className="row">
-					<div className="col-md-12 text-secondary text-center">
-						<div className="bg-dark px-4">
-							<span>
-								&copy; Copyright {new Date().getFullYear()}. Develped by Mahmoud
-								Osman.
-							</span>
-						</div>
 					</div>
-				</div>
+				)}
 			</div>
 		</section>
 	);
