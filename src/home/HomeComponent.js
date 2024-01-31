@@ -26,7 +26,7 @@ const HomeComponent = () => {
 		{
 			id: 3,
 			name: "VAST BURGERS",
-			title: "VASTBUGERS",
+			title: "VAST BUGERS",
 			description:
 				"A burger application built with React.js utilizing Hooks and deployed on Vercel.",
 			image: "https://www.vectorlogo.zone/logos/reactjs/reactjs-icon.svg",
