@@ -106,8 +106,8 @@ const HomeComponent = () => {
 		},
 		{
 			id: 12,
-			name: "Angular potcast",
-			title: "Potcast App",
+			name: "ANGULAR PODCAST",
+			title: "PODCAST APP",
 			description:
 				"Angular podcast app developed using Angular and hosted on Vercel.",
 			image: "https://angular.io/assets/images/logos/angular/angular.svg",
